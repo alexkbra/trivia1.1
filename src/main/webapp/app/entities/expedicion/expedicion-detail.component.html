@@ -1,0 +1,31 @@
+
+<div *ngIf="expedicion">
+    <h2><span jhiTranslate="triviaApp.expedicion.detail.title">Expedicion</span> {{expedicion.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="triviaApp.expedicion.nombre">Nombre</span></dt>
+        <dd>
+            <span>{{expedicion.nombre}}</span>
+        </dd>
+        <dt><span jhiTranslate="triviaApp.expedicion.publicidad">Publicidad</span></dt>
+        <dd>
+            <span *ngFor="let publicidad of expedicion.publicidads; let last = last">
+                <a [routerLink]="['/publicidad', publicidad?.id ]">{{publicidad.titulo}}</a>{{last ? '' : ', '}}
+            </span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'expedicion/'+ expedicion.id + '/edit'} }]"
+            replaceUrl="true"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

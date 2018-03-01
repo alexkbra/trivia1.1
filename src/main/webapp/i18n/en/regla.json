@@ -1,0 +1,23 @@
+{
+    "triviaApp": {
+        "regla" : {
+            "home": {
+                "title": "Reglas",
+                "createLabel": "Create a new Regla",
+                "createOrEditLabel": "Create or edit a Regla",
+                "search": "Search for Regla"
+            },
+            "created": "A new Regla is created with identifier {{ param }}",
+            "updated": "A Regla is updated with identifier {{ param }}",
+            "deleted": "A Regla is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Regla {{ id }}?"
+            },
+            "detail": {
+                "title": "Regla"
+            },
+            "nombre": "Nombre",
+            "cuestionario": "Cuestionario"
+        }
+    }
+}

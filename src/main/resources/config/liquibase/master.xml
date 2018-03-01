@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+
+    <include file="config/liquibase/changelog/00000000000000_initial_schema.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20171130040028_added_entity_Empresas.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20171130040029_added_entity_Galerias.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20171130040030_added_entity_Publicidad.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20171130040031_added_entity_Expedicion.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20171130040032_added_entity_Cuestionario.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20171130040033_added_entity_Regla.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20171130040034_added_entity_Nivel.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20171130040035_added_entity_TipoPregunta.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20171130040036_added_entity_Pregunta.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20171130040037_added_entity_Pista.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20171130040038_added_entity_Respuesta.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20171130040039_added_entity_Participar.xml" relativeToChangelogFile="false"/>
+    <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
+    <include file="config/liquibase/changelog/20171130040029_added_entity_constraints_Galerias.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20171130040030_added_entity_constraints_Publicidad.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20171130040031_added_entity_constraints_Expedicion.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20171130040032_added_entity_constraints_Cuestionario.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20171130040033_added_entity_constraints_Regla.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20171130040036_added_entity_constraints_Pregunta.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20171130040037_added_entity_constraints_Pista.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20171130040038_added_entity_constraints_Respuesta.xml" relativeToChangelogFile="false"/>
+    <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
+</databaseChangeLog>

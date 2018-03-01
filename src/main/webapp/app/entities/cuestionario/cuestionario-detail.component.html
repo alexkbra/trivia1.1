@@ -1,0 +1,37 @@
+
+<div *ngIf="cuestionario">
+    <h2><span jhiTranslate="triviaApp.cuestionario.detail.title">Cuestionario</span> {{cuestionario.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="triviaApp.cuestionario.nombre">Nombre</span></dt>
+        <dd>
+            <span>{{cuestionario.nombre}}</span>
+        </dd>
+        <dt><span jhiTranslate="triviaApp.cuestionario.nivel">Nivel</span></dt>
+        <dd>
+            <span *ngFor="let nivel of cuestionario.nivels; let last = last">
+                <a [routerLink]="['/nivel', nivel?.id ]">{{nivel.nombre}}</a>{{last ? '' : ', '}}
+            </span>
+        </dd>
+        <dt><span jhiTranslate="triviaApp.cuestionario.expedicion">Expedicion</span></dt>
+        <dd>
+            <div *ngIf="cuestionario.expedicionId">
+                <a [routerLink]="['/expedicion', cuestionario.expedicionId]">{{cuestionario.expedicionNombre}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'cuestionario/'+ cuestionario.id + '/edit'} }]"
+            replaceUrl="true"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

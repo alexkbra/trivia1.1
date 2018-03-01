@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <!--
+        Added the constraints for entity Cuestionario.
+    -->
+    <changeSet id="20171130040032-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="cuestionarios_id"
+                                 baseTableName="cuestionario_nivel"
+                                 constraintName="fk_cuestionario_nivel_cuestionarios_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="cuestionario"/>
+        <addForeignKeyConstraint baseColumnNames="nivels_id"
+                                 baseTableName="cuestionario_nivel"
+                                 constraintName="fk_cuestionario_nivel_nivels_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="nivel"/>
+        
+        <addForeignKeyConstraint baseColumnNames="expedicion_id"
+                                 baseTableName="cuestionario"
+                                 constraintName="fk_cuestionario_expedicion_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="expedicion"/>
+
+    </changeSet>
+</databaseChangeLog>

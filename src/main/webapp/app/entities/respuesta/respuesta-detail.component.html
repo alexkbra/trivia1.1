@@ -1,0 +1,35 @@
+
+<div *ngIf="respuesta">
+    <h2><span jhiTranslate="triviaApp.respuesta.detail.title">Respuesta</span> {{respuesta.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="triviaApp.respuesta.cortaDescripcion">Corta Descripcion</span></dt>
+        <dd>
+            <span>{{respuesta.cortaDescripcion}}</span>
+        </dd>
+        <dt><span jhiTranslate="triviaApp.respuesta.descripcion">Descripcion</span></dt>
+        <dd>
+            <span>{{respuesta.descripcion}}</span>
+        </dd>
+        <dt><span jhiTranslate="triviaApp.respuesta.pregunta">Pregunta</span></dt>
+        <dd>
+            <div *ngIf="respuesta.preguntaId">
+                <a [routerLink]="['/pregunta', respuesta.preguntaId]">{{respuesta.preguntaCortaDescripcion}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'respuesta/'+ respuesta.id + '/edit'} }]"
+            replaceUrl="true"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

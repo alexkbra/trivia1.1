@@ -1,0 +1,24 @@
+{
+    "triviaApp": {
+        "empresas" : {
+            "home": {
+                "title": "Company",
+                "createLabel": "Create a new company",
+                "createOrEditLabel": "Create or edit a company",
+                "search": "Search for company"
+            },
+            "created": "A new company is created with identifier {{ param }}",
+            "updated": "A company is updated with identifier {{ param }}",
+            "deleted": "A company is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete company {{ id }}?"
+            },
+            "detail": {
+                "title": "Company"
+            },
+            "nombre": "Name",
+            "razonSocial": "Business name",
+            "publicidad": "Publicity"
+        }
+    }
+}

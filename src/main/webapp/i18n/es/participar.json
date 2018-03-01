@@ -1,0 +1,21 @@
+{
+    "triviaApp": {
+        "participar" : {
+            "home": {
+                "title": "Participars",
+                "createLabel": "Crear nuevo Participar",
+                "createOrEditLabel": "Crear o editar Participar",
+                "search": "Search for Participar"
+            },
+            "created": "Un nuevo Participar ha sido creado con el identificador {{ param }}",
+            "updated": "Un Participar ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Participar ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Participar {{ id }}?"
+            },
+            "detail": {
+                "title": "Participar"
+            }
+        }
+    }
+}

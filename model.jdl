@@ -1,0 +1,81 @@
+entity Empresas {
+	nombre String required minlength(4) maxlength(100),
+    razonSocial String required minlength(4) maxlength(100) 
+}
+
+entity Galerias{
+	uri String required minlength(1) maxlength(500)
+	tipoArchivo TipoArchivo required
+}
+
+enum TipoArchivo {
+    VIDEO, MUSIC, IMAGE, FILE, TEXT
+}
+
+entity Publicidad{
+	titulo String required minlength(4) maxlength(100),
+	descripcion String required minlength(10) maxlength(100),
+    premio_descripcion String required minlength(10) maxlength(100)
+}
+
+entity Expedicion{
+	nombre String required minlength(10) maxlength(100)
+}
+
+entity Cuestionario {
+	nombre String required minlength(4) maxlength(100)
+}
+
+entity Regla {
+	nombre String required minlength(4) maxlength(100)
+}
+
+entity Nivel{
+	nombre String required minlength(4) maxlength(100),
+	fechaInicio LocalDate required,
+	fechaFinal LocalDate required,
+	numeroPreguntas Integer required min(1)
+}
+
+entity TipoPregunta{
+	nombre String required minlength(4) maxlength(100),
+	constant String required minlength(4) maxlength(100),
+    descripcion String required minlength(10) maxlength(100)
+}
+
+entity Pregunta{
+	cortaDescripcion String required minlength(10) maxlength(200),
+	descripcion String required minlength(10) maxlength(500)
+}
+
+entity Pista{
+	cortaDescripcion String required minlength(10) maxlength(200),
+	descripcion String required minlength(10) maxlength(500)
+}
+
+entity Respuesta{
+	cortaDescripcion String required minlength(10) maxlength(200),
+	descripcion String required minlength(10) maxlength(600)
+}
+
+entity Participar{}
+
+relationship ManyToMany {
+	Expedicion{publicidad(titulo)} to Publicidad{expedicion(nombre)},
+	Cuestionario{nivel(nombre)} to Nivel{cuestionario(nombre)}
+}
+
+relationship OneToMany {
+	Empresas{publicidad(nombre) required} to Publicidad{empresas(razonSocial) required},
+	Publicidad{galeria(titulo) required} to Galerias{publicidad(titulo) required},
+	Expedicion{cuestionario(nombre) required} to Cuestionario{expedicion(nombre) required},
+	Cuestionario{regla(nombre) required} to Regla{cuestionario(nombre) required},
+	Cuestionario{Pregunta(cortaDescripcion) required} to Pregunta{cuestionario(nombre) required},
+	TipoPregunta{pregunta(cortaDescripcion) required} to Pregunta{tipoPregunta(nombre) required},
+	Pregunta{respuesta(cortaDescripcion) required} to Respuesta{pregunta(cortaDescripcion) required},
+	Pregunta{pista(cortaDescripcion) required} to Pista{pregunta(cortaDescripcion) required}
+}
+
+dto all with mapstruct
+service all with serviceImpl
+paginate all with pagination

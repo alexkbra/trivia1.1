@@ -1,0 +1,38 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipValidateRules": "required",
+            "relationshipName": "cuestionario",
+            "otherEntityName": "cuestionario",
+            "otherEntityRelationshipName": "expedicion"
+        },
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityRelationshipName": "expedicion",
+            "relationshipName": "publicidad",
+            "otherEntityName": "publicidad",
+            "otherEntityField": "titulo",
+            "ownerSide": true
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "nombre",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "minlength",
+                "maxlength"
+            ],
+            "fieldValidateRulesMinlength": 10,
+            "fieldValidateRulesMaxlength": 100
+        }
+    ],
+    "changelogDate": "20171130040031",
+    "entityTableName": "expedicion",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl"
+}

@@ -1,0 +1,101 @@
+<form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="modal-header">
+        <h4 class="modal-title" id="myPublicidadLabel" jhiTranslate="triviaApp.publicidad.home.createOrEditLabel">Create or edit a Publicidad</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()">&times;</button>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" [hidden]="!publicidad.id">
+            <label for="id" jhiTranslate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   [(ngModel)]="publicidad.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="triviaApp.publicidad.titulo" for="field_titulo">Titulo</label>
+            <input type="text" class="form-control" name="titulo" id="field_titulo"
+                [(ngModel)]="publicidad.titulo" required minlength="4" maxlength="100" />
+            <div [hidden]="!(editForm.controls.titulo?.dirty && editForm.controls.titulo?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.titulo?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.titulo?.errors?.minlength" jhiTranslate="entity.validation.minlength" translateValues="{ min: 4 }">
+                   This field is required to be at least 4 characters.
+                </small>
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.titulo?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 100 }">
+                   This field cannot be longer than 100 characters.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="triviaApp.publicidad.descripcion" for="field_descripcion">Descripcion</label>
+            <input type="text" class="form-control" name="descripcion" id="field_descripcion"
+                [(ngModel)]="publicidad.descripcion" required minlength="10" maxlength="100" />
+            <div [hidden]="!(editForm.controls.descripcion?.dirty && editForm.controls.descripcion?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.descripcion?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.descripcion?.errors?.minlength" jhiTranslate="entity.validation.minlength" translateValues="{ min: 10 }">
+                   This field is required to be at least 10 characters.
+                </small>
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.descripcion?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 100 }">
+                   This field cannot be longer than 100 characters.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="triviaApp.publicidad.premiodescripcion" for="field_premiodescripcion">Premiodescripcion</label>
+            <input type="text" class="form-control" name="premiodescripcion" id="field_premiodescripcion"
+                [(ngModel)]="publicidad.premiodescripcion" required minlength="10" maxlength="100" />
+            <div [hidden]="!(editForm.controls.premiodescripcion?.dirty && editForm.controls.premiodescripcion?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.premiodescripcion?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.premiodescripcion?.errors?.minlength" jhiTranslate="entity.validation.minlength" translateValues="{ min: 10 }">
+                   This field is required to be at least 10 characters.
+                </small>
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.premiodescripcion?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 100 }">
+                   This field cannot be longer than 100 characters.
+                </small>
+            </div>
+        </div>
+
+        <div [hidden]="!(editForm.controls.galeria?.dirty && editForm.controls.galeria?.invalid)">
+            <small class="form-text text-danger"
+                [hidden]="!editForm.controls.galeria?.errors?.required" jhiTranslate="entity.validation.required">
+                This field is required.
+            </small>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="triviaApp.publicidad.empresas" for="field_empresas">Empresas</label>
+            <select class="form-control" id="field_empresas" name="empresas" [(ngModel)]="publicidad.empresasId"  required>
+                <option *ngIf="!editForm.value.empresas" [ngValue]="null" selected></option>
+                <option [ngValue]="empresasOption.id" *ngFor="let empresasOption of empresas; trackBy: trackEmpresasById">{{empresasOption.razonSocial}}</option>
+            </select>
+        </div>
+        <div [hidden]="!(editForm.controls.empresas?.dirty && editForm.controls.empresas?.invalid)">
+            <small class="form-text text-danger"
+                [hidden]="!editForm.controls.empresas?.errors?.required" jhiTranslate="entity.validation.required">
+                This field is required.
+            </small>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

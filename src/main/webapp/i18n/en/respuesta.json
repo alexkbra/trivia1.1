@@ -1,0 +1,24 @@
+{
+    "triviaApp": {
+        "respuesta" : {
+            "home": {
+                "title": "Respuestas",
+                "createLabel": "Create a new Respuesta",
+                "createOrEditLabel": "Create or edit a Respuesta",
+                "search": "Search for Respuesta"
+            },
+            "created": "A new Respuesta is created with identifier {{ param }}",
+            "updated": "A Respuesta is updated with identifier {{ param }}",
+            "deleted": "A Respuesta is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Respuesta {{ id }}?"
+            },
+            "detail": {
+                "title": "Respuesta"
+            },
+            "cortaDescripcion": "Corta Descripcion",
+            "descripcion": "Descripcion",
+            "pregunta": "Pregunta"
+        }
+    }
+}

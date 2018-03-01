@@ -1,0 +1,41 @@
+
+<div *ngIf="pregunta">
+    <h2><span jhiTranslate="triviaApp.pregunta.detail.title">Pregunta</span> {{pregunta.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="triviaApp.pregunta.cortaDescripcion">Corta Descripcion</span></dt>
+        <dd>
+            <span>{{pregunta.cortaDescripcion}}</span>
+        </dd>
+        <dt><span jhiTranslate="triviaApp.pregunta.descripcion">Descripcion</span></dt>
+        <dd>
+            <span>{{pregunta.descripcion}}</span>
+        </dd>
+        <dt><span jhiTranslate="triviaApp.pregunta.cuestionario">Cuestionario</span></dt>
+        <dd>
+            <div *ngIf="pregunta.cuestionarioId">
+                <a [routerLink]="['/cuestionario', pregunta.cuestionarioId]">{{pregunta.cuestionarioNombre}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="triviaApp.pregunta.tipoPregunta">Tipo Pregunta</span></dt>
+        <dd>
+            <div *ngIf="pregunta.tipoPreguntaId">
+                <a [routerLink]="['/tipo-pregunta', pregunta.tipoPreguntaId]">{{pregunta.tipoPreguntaNombre}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'pregunta/'+ pregunta.id + '/edit'} }]"
+            replaceUrl="true"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

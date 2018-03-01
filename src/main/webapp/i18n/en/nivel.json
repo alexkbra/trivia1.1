@@ -1,0 +1,26 @@
+{
+    "triviaApp": {
+        "nivel" : {
+            "home": {
+                "title": "Nivels",
+                "createLabel": "Create a new Nivel",
+                "createOrEditLabel": "Create or edit a Nivel",
+                "search": "Search for Nivel"
+            },
+            "created": "A new Nivel is created with identifier {{ param }}",
+            "updated": "A Nivel is updated with identifier {{ param }}",
+            "deleted": "A Nivel is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Nivel {{ id }}?"
+            },
+            "detail": {
+                "title": "Nivel"
+            },
+            "nombre": "Nombre",
+            "fechaInicio": "Fecha Inicio",
+            "fechaFinal": "Fecha Final",
+            "numeroPreguntas": "Numero Preguntas",
+            "cuestionario": "Cuestionario"
+        }
+    }
+}

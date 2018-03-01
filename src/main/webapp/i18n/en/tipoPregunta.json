@@ -1,0 +1,25 @@
+{
+    "triviaApp": {
+        "tipoPregunta" : {
+            "home": {
+                "title": "Tipo Preguntas",
+                "createLabel": "Create a new Tipo Pregunta",
+                "createOrEditLabel": "Create or edit a Tipo Pregunta",
+                "search": "Search for Tipo Pregunta"
+            },
+            "created": "A new Tipo Pregunta is created with identifier {{ param }}",
+            "updated": "A Tipo Pregunta is updated with identifier {{ param }}",
+            "deleted": "A Tipo Pregunta is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Tipo Pregunta {{ id }}?"
+            },
+            "detail": {
+                "title": "Tipo Pregunta"
+            },
+            "nombre": "Nombre",
+            "constant": "Constant",
+            "descripcion": "Descripcion",
+            "pregunta": "Pregunta"
+        }
+    }
+}

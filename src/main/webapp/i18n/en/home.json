@@ -1,0 +1,19 @@
+{
+    "home": {
+        "title": "SYSTEM QUESTIONS AND ANSWERS RAMSES",
+        "subtitle": "It is a web application where users can register for free to participate in treasure hunting games, with scattered keys across the globe and the possibility of winning substantial prizes.",
+        "logged": {
+            "message": "You are logged in as user \"{{username}}\"."
+        },
+        "question": "",
+        "link": {
+            "homepage": "",
+            "stackoverflow": "",
+            "bugtracker": "",
+            "chat": "",
+            "follow": ""
+        },
+        "like": "",
+        "github": ""
+    }
+}

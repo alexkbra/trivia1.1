@@ -1,0 +1,37 @@
+
+<div *ngIf="nivel">
+    <h2><span jhiTranslate="triviaApp.nivel.detail.title">Nivel</span> {{nivel.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="triviaApp.nivel.nombre">Nombre</span></dt>
+        <dd>
+            <span>{{nivel.nombre}}</span>
+        </dd>
+        <dt><span jhiTranslate="triviaApp.nivel.fechaInicio">Fecha Inicio</span></dt>
+        <dd>
+            <span>{{nivel.fechaInicio | date:'mediumDate'}}</span>
+        </dd>
+        <dt><span jhiTranslate="triviaApp.nivel.fechaFinal">Fecha Final</span></dt>
+        <dd>
+            <span>{{nivel.fechaFinal | date:'mediumDate'}}</span>
+        </dd>
+        <dt><span jhiTranslate="triviaApp.nivel.numeroPreguntas">Numero Preguntas</span></dt>
+        <dd>
+            <span>{{nivel.numeroPreguntas}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'nivel/'+ nivel.id + '/edit'} }]"
+            replaceUrl="true"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

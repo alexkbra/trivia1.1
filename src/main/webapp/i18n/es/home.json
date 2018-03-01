@@ -1,0 +1,19 @@
+{
+    "home": {
+        "title": "PREGUNTAS Y RESPUESTAS RAMSES SYSTEM",
+        "subtitle": "Es una aplicación web en donde los usuarios pueden registrarse de forma gratuita para participar en juegos de caza de tesoros, con claves dispersas a través del globo y la posibilidad de ganar premios sustanciales.",
+        "logged": {
+            "message": "Está conectado como \"{{username}}\"."
+        },
+        "question": "",
+        "link": {
+            "homepage": "",
+            "stackoverflow": "",
+            "bugtracker": "",
+            "chat": "",
+            "follow": ""
+        },
+        "like": "",
+        "github": ""
+    }
+}

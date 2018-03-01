@@ -1,0 +1,66 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipValidateRules": "required",
+            "relationshipName": "galeria",
+            "otherEntityName": "galerias",
+            "otherEntityRelationshipName": "publicidad"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipValidateRules": "required",
+            "relationshipName": "empresas",
+            "otherEntityName": "empresas",
+            "otherEntityField": "razonSocial"
+        },
+        {
+            "relationshipType": "many-to-many",
+            "relationshipName": "expedicion",
+            "otherEntityName": "expedicion",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "publicidad"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "titulo",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "minlength",
+                "maxlength"
+            ],
+            "fieldValidateRulesMinlength": 4,
+            "fieldValidateRulesMaxlength": 100
+        },
+        {
+            "fieldName": "descripcion",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "minlength",
+                "maxlength"
+            ],
+            "fieldValidateRulesMinlength": 10,
+            "fieldValidateRulesMaxlength": 100
+        },
+        {
+            "fieldName": "premiodescripcion",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "minlength",
+                "maxlength"
+            ],
+            "fieldValidateRulesMinlength": 10,
+            "fieldValidateRulesMaxlength": 100
+        }
+    ],
+    "changelogDate": "20171130040030",
+    "entityTableName": "publicidad",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl"
+}

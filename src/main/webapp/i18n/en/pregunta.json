@@ -1,0 +1,27 @@
+{
+    "triviaApp": {
+        "pregunta" : {
+            "home": {
+                "title": "Preguntas",
+                "createLabel": "Create a new Pregunta",
+                "createOrEditLabel": "Create or edit a Pregunta",
+                "search": "Search for Pregunta"
+            },
+            "created": "A new Pregunta is created with identifier {{ param }}",
+            "updated": "A Pregunta is updated with identifier {{ param }}",
+            "deleted": "A Pregunta is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Pregunta {{ id }}?"
+            },
+            "detail": {
+                "title": "Pregunta"
+            },
+            "cortaDescripcion": "Corta Descripcion",
+            "descripcion": "Descripcion",
+            "respuesta": "Respuesta",
+            "pista": "Pista",
+            "cuestionario": "Cuestionario",
+            "tipoPregunta": "Tipo Pregunta"
+        }
+    }
+}

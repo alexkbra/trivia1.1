@@ -1,0 +1,26 @@
+{
+    "triviaApp": {
+        "cuestionario" : {
+            "home": {
+                "title": "Cuestionarios",
+                "createLabel": "Crear nuevo Cuestionario",
+                "createOrEditLabel": "Crear o editar Cuestionario",
+                "search": "Search for Cuestionario"
+            },
+            "created": "Un nuevo Cuestionario ha sido creado con el identificador {{ param }}",
+            "updated": "Un Cuestionario ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Cuestionario ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Cuestionario {{ id }}?"
+            },
+            "detail": {
+                "title": "Cuestionario"
+            },
+            "nombre": "Nombre",
+            "regla": "Regla",
+            "pregunta": "Pregunta",
+            "nivel": "Nivel",
+            "expedicion": "Expedicion"
+        }
+    }
+}

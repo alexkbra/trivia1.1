@@ -1,0 +1,24 @@
+{
+    "triviaApp": {
+        "expedicion" : {
+            "home": {
+                "title": "Expedicions",
+                "createLabel": "Create a new Expedicion",
+                "createOrEditLabel": "Create or edit a Expedicion",
+                "search": "Search for Expedicion"
+            },
+            "created": "A new Expedicion is created with identifier {{ param }}",
+            "updated": "A Expedicion is updated with identifier {{ param }}",
+            "deleted": "A Expedicion is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Expedicion {{ id }}?"
+            },
+            "detail": {
+                "title": "Expedicion"
+            },
+            "nombre": "Nombre",
+            "cuestionario": "Cuestionario",
+            "publicidad": "Publicidad"
+        }
+    }
+}

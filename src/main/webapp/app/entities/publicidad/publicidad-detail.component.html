@@ -1,0 +1,39 @@
+
+<div *ngIf="publicidad">
+    <h2><span jhiTranslate="triviaApp.publicidad.detail.title">Publicidad</span> {{publicidad.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="triviaApp.publicidad.titulo">Titulo</span></dt>
+        <dd>
+            <span>{{publicidad.titulo}}</span>
+        </dd>
+        <dt><span jhiTranslate="triviaApp.publicidad.descripcion">Descripcion</span></dt>
+        <dd>
+            <span>{{publicidad.descripcion}}</span>
+        </dd>
+        <dt><span jhiTranslate="triviaApp.publicidad.premiodescripcion">Premiodescripcion</span></dt>
+        <dd>
+            <span>{{publicidad.premiodescripcion}}</span>
+        </dd>
+        <dt><span jhiTranslate="triviaApp.publicidad.empresas">Empresas</span></dt>
+        <dd>
+            <div *ngIf="publicidad.empresasId">
+                <a [routerLink]="['/empresas', publicidad.empresasId]">{{publicidad.empresasRazonSocial}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'publicidad/'+ publicidad.id + '/edit'} }]"
+            replaceUrl="true"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

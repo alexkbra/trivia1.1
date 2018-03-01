@@ -1,0 +1,95 @@
+<form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="modal-header">
+        <h4 class="modal-title" id="myNivelLabel" jhiTranslate="triviaApp.nivel.home.createOrEditLabel">Create or edit a Nivel</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()">&times;</button>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" [hidden]="!nivel.id">
+            <label for="id" jhiTranslate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   [(ngModel)]="nivel.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="triviaApp.nivel.nombre" for="field_nombre">Nombre</label>
+            <input type="text" class="form-control" name="nombre" id="field_nombre"
+                [(ngModel)]="nivel.nombre" required minlength="4" maxlength="100" />
+            <div [hidden]="!(editForm.controls.nombre?.dirty && editForm.controls.nombre?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.nombre?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.nombre?.errors?.minlength" jhiTranslate="entity.validation.minlength" translateValues="{ min: 4 }">
+                   This field is required to be at least 4 characters.
+                </small>
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.nombre?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 100 }">
+                   This field cannot be longer than 100 characters.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="triviaApp.nivel.fechaInicio" for="field_fechaInicio">Fecha Inicio</label>
+            <div class="input-group">
+                <input id="field_fechaInicio" type="text" class="form-control" name="fechaInicio" ngbDatepicker  #fechaInicioDp="ngbDatepicker" [(ngModel)]="nivel.fechaInicio"
+                required/>
+                <span class="input-group-btn">
+                    <button type="button" class="btn btn-secondary" (click)="fechaInicioDp.toggle()"><i class="fa fa-calendar"></i></button>
+                </span>
+            </div>
+            <div [hidden]="!(editForm.controls.fechaInicio?.dirty && editForm.controls.fechaInicio?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.fechaInicio?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="triviaApp.nivel.fechaFinal" for="field_fechaFinal">Fecha Final</label>
+            <div class="input-group">
+                <input id="field_fechaFinal" type="text" class="form-control" name="fechaFinal" ngbDatepicker  #fechaFinalDp="ngbDatepicker" [(ngModel)]="nivel.fechaFinal"
+                required/>
+                <span class="input-group-btn">
+                    <button type="button" class="btn btn-secondary" (click)="fechaFinalDp.toggle()"><i class="fa fa-calendar"></i></button>
+                </span>
+            </div>
+            <div [hidden]="!(editForm.controls.fechaFinal?.dirty && editForm.controls.fechaFinal?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.fechaFinal?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="triviaApp.nivel.numeroPreguntas" for="field_numeroPreguntas">Numero Preguntas</label>
+            <input type="number" class="form-control" name="numeroPreguntas" id="field_numeroPreguntas"
+                [(ngModel)]="nivel.numeroPreguntas" required min="1" />
+            <div [hidden]="!(editForm.controls.numeroPreguntas?.dirty && editForm.controls.numeroPreguntas?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.numeroPreguntas?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.numeroPreguntas?.errors?.min" jhiTranslate="entity.validation.min" translateValues="{ min: 1 }">
+                    This field should be at least 1.
+                </small>
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.numeroPreguntas?.errors?.number" jhiTranslate="entity.validation.number">
+                    This field should be a number.
+                </small>
+            </div>
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

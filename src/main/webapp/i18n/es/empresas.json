@@ -1,0 +1,24 @@
+{
+    "triviaApp": {
+        "empresas" : {
+            "home": {
+                "title": "Empresas",
+                "createLabel": "Crear nuevo Empresas",
+                "createOrEditLabel": "Crear o editar Empresas",
+                "search": "Buscar por id"
+            },
+            "created": "Un nuevo Empresas ha sido creado con el identificador {{ param }}",
+            "updated": "Un Empresas ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Empresas ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Empresas {{ id }}?"
+            },
+            "detail": {
+                "title": "Empresas"
+            },
+            "nombre": "Nombre",
+            "razonSocial": "Razón Social",
+            "publicidad": "Publicidad"
+        }
+    }
+}

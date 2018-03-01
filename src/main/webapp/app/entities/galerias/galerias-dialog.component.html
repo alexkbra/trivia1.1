@@ -1,0 +1,73 @@
+<form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="modal-header">
+        <h4 class="modal-title" id="myGaleriasLabel" jhiTranslate="triviaApp.galerias.home.createOrEditLabel">Create or edit a Galerias</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()">&times;</button>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" [hidden]="!galerias.id">
+            <label for="id" jhiTranslate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   [(ngModel)]="galerias.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="triviaApp.galerias.uri" for="field_uri">Uri</label>
+            <input type="text" class="form-control" name="uri" id="field_uri"
+                [(ngModel)]="galerias.uri" required minlength="1" maxlength="500" />
+            <div [hidden]="!(editForm.controls.uri?.dirty && editForm.controls.uri?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.uri?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.uri?.errors?.minlength" jhiTranslate="entity.validation.minlength" translateValues="{ min: 1 }">
+                   This field is required to be at least 1 characters.
+                </small>
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.uri?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 500 }">
+                   This field cannot be longer than 500 characters.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="triviaApp.galerias.tipoArchivo" for="field_tipoArchivo">Tipo Archivo</label>
+            <select class="form-control" name="tipoArchivo" [(ngModel)]="galerias.tipoArchivo" id="field_tipoArchivo"  required>
+                <option value="VIDEO">{{'triviaApp.TipoArchivo.VIDEO' | translate}}</option>
+                <option value="MUSIC">{{'triviaApp.TipoArchivo.MUSIC' | translate}}</option>
+                <option value="IMAGE">{{'triviaApp.TipoArchivo.IMAGE' | translate}}</option>
+                <option value="FILE">{{'triviaApp.TipoArchivo.FILE' | translate}}</option>
+                <option value="TEXT">{{'triviaApp.TipoArchivo.TEXT' | translate}}</option>
+            </select>
+            <div [hidden]="!(editForm.controls.tipoArchivo?.dirty && editForm.controls.tipoArchivo?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.tipoArchivo?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="triviaApp.galerias.publicidad" for="field_publicidad">Publicidad</label>
+            <select class="form-control" id="field_publicidad" name="publicidad" [(ngModel)]="galerias.publicidadId"  required>
+                <option *ngIf="!editForm.value.publicidad" [ngValue]="null" selected></option>
+                <option [ngValue]="publicidadOption.id" *ngFor="let publicidadOption of publicidads; trackBy: trackPublicidadById">{{publicidadOption.titulo}}</option>
+            </select>
+        </div>
+        <div [hidden]="!(editForm.controls.publicidad?.dirty && editForm.controls.publicidad?.invalid)">
+            <small class="form-text text-danger"
+                [hidden]="!editForm.controls.publicidad?.errors?.required" jhiTranslate="entity.validation.required">
+                This field is required.
+            </small>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

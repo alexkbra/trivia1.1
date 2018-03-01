@@ -1,0 +1,24 @@
+{
+    "triviaApp": {
+        "pista" : {
+            "home": {
+                "title": "Pistas",
+                "createLabel": "Crear nuevo Pista",
+                "createOrEditLabel": "Crear o editar Pista",
+                "search": "Search for Pista"
+            },
+            "created": "Un nuevo Pista ha sido creado con el identificador {{ param }}",
+            "updated": "Un Pista ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Pista ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Pista {{ id }}?"
+            },
+            "detail": {
+                "title": "Pista"
+            },
+            "cortaDescripcion": "Corta Descripcion",
+            "descripcion": "Descripcion",
+            "pregunta": "Pregunta"
+        }
+    }
+}

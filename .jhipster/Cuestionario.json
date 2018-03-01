@@ -1,0 +1,52 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipValidateRules": "required",
+            "relationshipName": "regla",
+            "otherEntityName": "regla",
+            "otherEntityRelationshipName": "cuestionario"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipValidateRules": "required",
+            "relationshipName": "pregunta",
+            "otherEntityName": "pregunta",
+            "otherEntityRelationshipName": "cuestionario"
+        },
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityRelationshipName": "cuestionario",
+            "relationshipName": "nivel",
+            "otherEntityName": "nivel",
+            "otherEntityField": "nombre",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipValidateRules": "required",
+            "relationshipName": "expedicion",
+            "otherEntityName": "expedicion",
+            "otherEntityField": "nombre"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "nombre",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "minlength",
+                "maxlength"
+            ],
+            "fieldValidateRulesMinlength": 4,
+            "fieldValidateRulesMaxlength": 100
+        }
+    ],
+    "changelogDate": "20171130040032",
+    "entityTableName": "cuestionario",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl"
+}
